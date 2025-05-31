@@ -18,6 +18,7 @@ int main() {
     float pibPerCapita1, pibPerCapita2;
     int pontos1, pontos2;
     float superPoder1, superPoder2;
+    int menu;
     
     // Entrada de dados - Carta 1
     printf("Carta 1:\n");
@@ -102,22 +103,148 @@ int main() {
 
     printf("\n");
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    printf("Comparação de cartas (Atributo: População):\n");
-
-    printf("Carta 1 - %s (%s): %d\n", nomeCidade1, estado1, populacao1);
-
-    printf("Carta 2 - %s (%s): %d\n", nomeCidade2, estado2, populacao2);
-
+    //Menu
+    printf("Menu de comparação:\n");
+    printf("População--------------[1]\n");
+    printf("Área-------------------[2]\n");
+    printf("PIB--------------------[3]\n");
+    printf("Pontos Turísticos------[4]\n");
+    printf("Densidade Populacional-[5]\n");
+    printf("PIB per Capita---------[6]\n");
     printf("\n");
+    printf("Digite a opção do atributo de comparação: ");
+    scanf("%d", &menu);
+
+    switch (menu)
+    {
+    case 1:
+        //Compara pela População
+        printf("Comparação de cartas (Atributo: População):\n");
+
+        printf("Carta 1 - %s (%s): %d\n", nomeCidade1, estado1, populacao1);
+
+        printf("Carta 2 - %s (%s): %d\n", nomeCidade2, estado2, populacao2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (populacao1 > populacao2) {
+            printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (populacao1 < populacao2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
     
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    if (populacao1 > populacao2) {
-       printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
-    } else {
-       printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+    case 2:
+        //Compara pela Área
+        printf("Comparação de cartas (Atributo: Área):\n");
+
+        printf("Carta 1 - %s (%s): %.2f\n", nomeCidade1, estado1, area1);
+
+        printf("Carta 2 - %s (%s): %.2f\n", nomeCidade2, estado2, area2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (area1 > area2) {
+            printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (area1 < area2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
+    
+    case 3:
+        //Compara pelo PIB
+        printf("Comparação de cartas (Atributo: PIB):\n");
+
+        printf("Carta 1 - %s (%s): %.2f\n", nomeCidade1, estado1, pib1);
+
+        printf("Carta 2 - %s (%s): %.2f\n", nomeCidade2, estado2, pib2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (pib1 > pib2) {
+            printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (pib1 < pib2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
+    
+    case 4:
+        //Compara pelos Pontos Turísticos
+        printf("Comparação de cartas (Atributo: Pontos Turísticos):\n");
+
+        printf("Carta 1 - %s (%s): %d\n", nomeCidade1, estado1, pontosTuristicos1);
+
+        printf("Carta 2 - %s (%s): %d\n", nomeCidade2, estado2, pontosTuristicos2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (pontosTuristicos1 > pontosTuristicos2) {
+            printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (pontosTuristicos1 < pontosTuristicos2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
+    
+    case 5:
+        //Compara pela Densidade Populacional
+        printf("Comparação de cartas (Atributo: Densidade Populacional):\n");
+
+        printf("Carta 1 - %s (%s): %.2f\n", nomeCidade1, estado1, densidadePopulacional1);
+
+        printf("Carta 2 - %s (%s): %.2f\n", nomeCidade2, estado2, densidadePopulacional2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (densidadePopulacional1 < densidadePopulacional2) {
+            printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (densidadePopulacional1 > densidadePopulacional2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
+    
+    case 6:
+        //Compara pelo PIB per Capita
+        printf("Comparação de cartas (Atributo: PIB per Capita):\n");
+
+        printf("Carta 1 - %s (%s): %.2f\n", nomeCidade1, estado1, pibPerCapita1);
+
+        printf("Carta 2 - %s (%s): %.2f\n", nomeCidade2, estado2, pibPerCapita2);
+
+        printf("\n");
+        
+        // Exibição dos Resultados:
+        // Após realizar as comparações, exibe os resultados para o usuário.
+        if (pibPerCapita1 > pibPerCapita2) {
+        printf("Resultado: Carta 1 - %s (%s) venceu!\n", nomeCidade1, estado1);
+        } else if (pibPerCapita1 < pibPerCapita2) {
+            printf("Resultado: Carta 2 - %s (%s) venceu!\n", nomeCidade2, estado2);
+        } else {
+            printf("Houve um empate!\n");
+        }
+        break;
+    
+    default:
+        break;
     }
 
     return 0;
